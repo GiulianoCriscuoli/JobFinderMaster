@@ -13,7 +13,7 @@ atualização e será feito o front end em breve. O Sistema de adicionar vagas j
 4. Sequelize
 5. Bootstrap
 
-#Executando o projeto
+# Executando o projeto
 
 ### Dependências
 
