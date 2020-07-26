@@ -3,6 +3,7 @@ const router = express.Router();
 const Job = require('../models/Job');
 
 
+// Rota de inserção de vagas 
 
 router.post('/adicionando', (req, res) => {
 
@@ -20,7 +21,7 @@ Job.create({ // inserindo na tabela
     email
 
 })
-.then(() => res.redirect('/'))
+.then(() => res.redirect('/')) //res.redirect para redirecionar para a home
 .catch(err => console.log("Erro ao salvar no banco de dados: " + err));
 
 
