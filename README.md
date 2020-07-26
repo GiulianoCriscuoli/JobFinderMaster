@@ -1,8 +1,8 @@
-# Projeto Job Master Finder
+# Projeto Job Finder Master
 
 # Descrição
 
-Job Master Finder é um site, feito por mim, para vagas de empregos focadas para desenvolvedores. Ainda está em constante
+Job Finder Master é um site, feito por mim, para vagas de empregos focadas para desenvolvedores. Ainda está em constante
 atualização e será feito o front end em breve. O Sistema de adicionar vagas já está em funcionamento.
 
 # Tecnologias utilizadas
