@@ -1,5 +1,7 @@
 const express = require('express');
 const db = require('./db/connection');
+const exphbs = require('express-handlebars');
+const path = require('path');
 const router = require('./routes/index');
 const app = express();
 
@@ -8,9 +10,19 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+// configutação da engine
+
+app.set('views', path.join(__dirname, 'views')); // caminho que contém as views
+app.set('view engine', 'handlebars'); // nome da engine
+app.engine('handlebars', exphbs({ defaultLayout: 'main'})); // nome da engine e arquivo padrão
+
+// arquivo estático, que contém a pasta das imagens e o CSS
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 // acionando a porta 3000
 
-const PORT =  3000;
+const PORT =  3001;
 
 app.listen(PORT, () => {
 
@@ -27,6 +39,14 @@ db.authenticate()
 
 })
 .catch(err => console.log("Erro ao acessar o banco de dados: " + err));
+
+// rota padrão
+
+app.get('/', (req, res) => {
+
+    res.render('index');
+
+});
 
 // usando a rota /jobs e usando a rota que vem da variável router
 

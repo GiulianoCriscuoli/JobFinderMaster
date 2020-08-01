@@ -3,9 +3,16 @@ const router = express.Router();
 const Job = require('../models/Job');
 
 
+// Acessando a view de adicionar vagas
+
+router.get('/create', (req, res) => {
+
+    res.render('add');
+})
+
 // Rota de inserção de vagas 
 
-router.post('/adicionando', (req, res) => {
+router.post('/create', (req, res) => {
 
 let {title, description, salary, new_job, company, email} = req.body;  // desconstruindo a requisição body
 
