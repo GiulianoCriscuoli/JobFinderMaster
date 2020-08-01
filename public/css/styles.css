@@ -213,3 +213,10 @@
     display:block;
 
 }
+
+/* Formulário de adição de vagas */
+
+#add-form-container {
+
+    margin-top: 100px;
+}

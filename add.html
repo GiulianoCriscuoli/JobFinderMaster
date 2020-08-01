@@ -8,8 +8,93 @@
     <title>Adicionar vaga</title>
 </head>
 <body>  
+    <header>
+        <nav class="navbar fixed-top nav-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html"> Job Finder Master</a>
+            <button class="navbar-toggler" 
+            type="button"
+            data-toggle="collapse" 
+            data-target="#navbarNav" 
+            aria-controls="navbarNav" 
+            aria-expanded="true"
+            aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a  id="check-work"class="nav-link" href="index.html">Confira as vagas</a>
+                    </li>
 
+                    <li class="nav-item">
+                        <a id="create-work" class="nav-link btn btn-warning" href="add.html">Adicionar uma vaga</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="add-form-container" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Divulgue sua vaga na plataforma</h1>
+            </div>
+            <div id="form-box" class="col-md-12">
+                <h2>Preencha os dados necessários</h2>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="title">Título da vaga:</label>
+                            <input type="text"
+                            class="form-control"
+                            id="title" 
+                            name="title"
+                            placeholder="Digite o título da vaga"
+                            required />
+                            <small id="titleHelp" class="form-text text-muted">O título é muito importante, seja claro e objetivo!</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descrição da vaga:</label>
+                            <textarea type="description"
+                            class="form-control"
+                            id="description"
+                            name="description" 
+                            placeholder="Descreva as atividades do desenvolvedor..."
+                            required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Empresa contratante:</label>
+                            <input type="text" 
+                            class="form-control"
+                            id="company"
+                            name="company"
+                            placeholder="Digite a empresa que vai contratar..."
+                            required />
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Email para contrato:</label>
+                            <input type="text"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            placeholder="Digite o email para contato..."
+                            required />
+                        </div>
+                        <div class="form-group">
+                            <label>Salario oferecido:</label>
+                            <input type="text"
+                            class="form-control"
+                            id="salary"
+                            name="salary"
+                            placeholder="Digite o salário oferecido..."
+                            required />
+                        </div>
+                        <input type="hidden" name="new_job" value="1" />
+                        <button type="submit" class="btn btn-primary">Enviar</button>
 
+                    </form>
+            </div>
+        </div>
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
