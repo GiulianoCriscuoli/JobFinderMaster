@@ -48,7 +48,8 @@ Job.create({ // inserindo na tabela
 .then(() => res.redirect('/')) //res.redirect para redirecionar para a home
 .catch(err => console.log("Erro ao salvar no banco de dados: " + err));
 
-
 });
+
+
 
 module.exports = router;
