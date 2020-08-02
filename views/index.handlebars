@@ -1,9 +1,9 @@
 <div  id="top-container"class="container-fluid">
         <h1 id="main-title" class="text-center">Aqui você encontra a vaga dos seus sonhos</h1>
         <p id="main-subtitle" class="text-center">Somos o site com mais vagas de programadores do mercado, direcionado para o trabalho remoto.</p>
-        <form id="search-form" class="form-inline" action="">
+        <form id="search-form" class="form-inline" action="/" method="GET">
             <div class="form-group col-md-10">
-                <input type="text" class="form-control" id="job-form" placeholder="Informe a vaga que está buscando..." />
+                <input type="text" class="form-control" id="job-form" name="job" placeholder="Informe a vaga que está buscando..." />
 
             </div> 
 
@@ -18,32 +18,22 @@
         <div id="jobs-container" class="container">
             <div class="row">
                 <div class="col-md-12" id="content">
-                    <h2 id="job-list-title">Veja as nossas vagas em destaque</h2>
+                {{#if search}}
+                    <h2 id="job-list-title">Procurar vagas que contém: {{search}}</h2>    
+                {{else}}
+                     <h2 id="job-list-title">Veja as nossas vagas em destaque</h2>
+                {{/if}}
                     <ul id="job-list" class="list-group">
-                        <li class="list-group-item new-job">
+                        {{#each jobs}}
+                        <li class="list-group-item {{#if dataValues.new_job}}new-job{{/if}}">
                             <img src="img/home.svg"  alt="company"/>
-                            <p>Empresa</p>
-                            <h2>Título</h2>
-                            <p>R$ 2000,00</p>
+                            <p>Empresa: {{dataValues.company}}</p>
+                            <h2>{{dataValues.title}}</h2>
+                            <p>Salário: R${{dataValues.salary}}</p>
                             <span class="new-job-label">Nova</span>
-                            <a class="btn btn-primary">Ver vaga</a>
+                            <a class="btn btn-primary" href="/jobs/view/{{dataValues.id}}">Ver vaga</a>
                         </li> 
-                        <li class="list-group-item">
-                            <img src="img/home.svg"  alt="company"/>
-                            <p>Empresa</p>
-                            <h2>Título</h2>
-                            <p>R$ 2000,00</p>
-                            <span class="new-job-label">Nova</span>
-                            <a class="btn btn-primary">Ver vaga</a>
-                        </li> 
-                        <li class="list-group-item">
-                            <img src="img/home.svg"  alt="company"/>
-                            <p>Empresa</p>
-                            <h2>Título</h2>
-                            <p>R$ 2000,00</p>
-                            <span class="new-job-label">Nova</span>
-                            <a class="btn btn-primary">Ver vaga</a>
-                        </li> 
+                        {{/each}}
                     </ul>
                 </div>
             </div>

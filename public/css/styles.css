@@ -273,3 +273,34 @@
     color: #000;
 
 }
+
+/* View individual da vaga */
+
+#job-view-container {
+
+    margin-top: 100px;
+    background-color: blue;
+
+}
+
+.main-color {
+
+    color: #e0a800;
+
+}
+
+.back-link {
+
+    border: 1px solid #e0a800;
+    padding: 5px 10px;
+    transition: .5s;
+    cursor:pointer;
+
+}
+
+.back-link:hover {
+
+    background-color: #e0a800;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}

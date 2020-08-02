@@ -3,6 +3,23 @@ const router = express.Router();
 const Job = require('../models/Job');
 
 
+// Criando a view de uma única vaga
+
+router.get('/view/:id', (req, res) => {
+
+    Job.findOne({
+
+        where: { id: req.params.id }
+    })
+    .then(job => {
+
+        res.render('view', {job})
+
+    })
+    .catch(err => console.log(err));
+
+})
+
 // Acessando a view de adicionar vagas
 
 router.get('/create', (req, res) => {
